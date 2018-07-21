@@ -71,7 +71,6 @@ class InitialScreen extends Component {
   // previous button press callback
   onPreviousPress = () => {
     if (this.state.index - 1 >= 0) {
-      alert(this.state.index);
       this.onIndexChanged(Number(this.state.index) - 1);
     }
   };
@@ -94,20 +93,15 @@ class InitialScreen extends Component {
   /* index change swiper */
   onIndexChanged = index => {
     /* switch animation */
+
     switch (index) {
       case 0:
-        // this.lottie.second.setValue(0);
-        // this.lottie.third.setValue(0);
         this.runAnimation("first");
         break;
       case 1:
-        // this.lottie.first.setValue(0);
-        // this.lottie.third.setValue(0);
         this.runAnimation("second");
         break;
       case 2:
-        // this.lottie.first.setValue(0);
-        // this.lottie.second.setValue(0);
         this.runAnimation("third");
         break;
       default:
@@ -115,7 +109,7 @@ class InitialScreen extends Component {
     }
 
     // scrolling swiper
-    this.swiper.scrollBy(index);
+    this.swiper.scrollBy(1);
 
     // set index
     this.setState({
